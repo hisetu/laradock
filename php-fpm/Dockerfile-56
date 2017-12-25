@@ -126,6 +126,17 @@ RUN if [ ${INSTALL_SWOOLE} = true ]; then \
 ;fi
 
 #####################################
+# MongoDB (old):
+#####################################
+
+ARG INSTALL_MONGO_OLD=false
+RUN if [ ${INSTALL_MONGO_OLD} = true ]; then \
+    # Install the mongo extension
+    pecl install mongo && \
+    docker-php-ext-enable mongo \
+;fi
+
+#####################################
 # MongoDB:
 #####################################
 

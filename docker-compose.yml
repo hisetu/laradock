@@ -333,6 +333,9 @@ services:
         - "${MONGODB_PORT}:27017"
       volumes:
         - ${DATA_SAVE_PATH}/mongo:/data/db
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=${MONGODB_ROOT_USER}
+        - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
       networks:
         - backend
 
